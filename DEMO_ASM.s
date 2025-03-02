@@ -46,7 +46,7 @@ delay_loop:
     .section .text
     .global main
 
-// Định nghĩa địa chỉ thanh ghi
+// Định nghĩa đ
 GPIOA_BASE    .equ  0x58020000   // Địa chỉ cơ bản của GPIOA (STM32H7)
 RCC_BASE      .equ  0x58024400   // Địa chỉ RCC
 RCC_AHB4ENR   .equ  (RCC_BASE + 0xE0) // Thanh ghi bật clock cho GPIO
@@ -55,7 +55,6 @@ GPIOA_BSRR    .equ  (GPIOA_BASE + 0x18) // Thanh ghi bật/tắt bit GPIO
 
 // Giá trị bit điều khiển
 GPIOA_EN      .equ  0x1         // Bật clock GPIOA
-PA0_MODE_OUT  .equ  0x1         // Cấu hình PA0 làm output
 PA0_SET       .equ  (1 << 0)    // Bật PA0 (Bit Set)
 PA0_RESET     .equ  (1 << 16)   // Tắt PA0 (Bit Reset)
 
@@ -74,7 +73,7 @@ loop:
 
     B loop                  // Quay lại vòng lặp
 
-// Hàm khởi tạo GPIOA
+// Hàm khởi tạo GPIOA v3.2
 init_GPIO:
     LDR R0, =RCC_AHB4ENR
     LDR R1, [R0]            
